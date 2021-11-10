@@ -44,3 +44,28 @@ TEST_CASE("fartherFromOrigin tests")
   CHECK( fartherFromOrigin(&p1, &p3) == &p3 );
   CHECK( fartherFromOrigin(&p4, &p2) == &p4 );
 }
+
+//----------------- task C -----------------
+
+TEST_CASE("move tests")
+{
+  Coord3D pos1 = {0, 0, 0};
+  Coord3D vel1 = {1, 2, 3};
+
+  move(&pos1, &vel1, 3.0);
+  CHECK( pos1.x == 3.0 );
+  CHECK( pos1.y == 6.0 );
+  CHECK( pos1.z == 9.0 );
+
+  Coord3D vel2 = {-3, 2, 0.5};
+  move(&pos1, &vel2, 2.0);
+  CHECK( pos1.x == -3.0 );
+  CHECK( pos1.y == 10.0 );
+  CHECK( pos1.z == 10.0 );
+
+  Coord3D vel3 = {5, -10, 2};
+  move(&pos1, &vel3, 0.1);
+  CHECK( pos1.x == -2.5 );
+  CHECK( pos1.y == 9.0 );
+  CHECK( pos1.z == 10.2 );
+}

@@ -22,5 +22,16 @@ int main()
   std::cout << "\npoint2 should be farther from the origin" << '\n';
   std::cout << "fartherFromOrigin(&point1, &point2) == " << fartherFromOrigin(&point1, &point2) << '\n';
 
+  //task C
+  std::cout << "\nTask C\n" << '\n';
+  Coord3D pos = {0, 0, 100.0};
+  Coord3D vel = {1, -5, 0.2};
+  std::cout << "pos = {0, 0, 100.0}" << '\n';
+  std::cout << "vel = {1, -5, 0.2}" << '\n';
+
+  move(&pos, &vel, 2.0);
+  std::cout << "\nAfter calling move(&pos, &vel, 2.0)," << '\n';
+  std::cout << "pos = {" << pos.x << ", " << pos.y << ", " << pos.z << "}" << '\n';
+
   return 0;
 }
