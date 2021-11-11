@@ -69,3 +69,26 @@ TEST_CASE("move tests")
   CHECK( pos1.y == 9.0 );
   CHECK( pos1.z == 10.2 );
 }
+
+//----------------- task E -----------------
+
+TEST_CASE("createCoord3D and deleteCoord3D tests")
+{
+  Coord3D *pos1 = createCoord3D(10, 20, 30);
+  CHECK( (*pos1).x == 10.0 );
+  CHECK( (*pos1).y == 20.0 );
+  CHECK( (*pos1).z == 30.0 );
+
+  Coord3D *vel1 = createCoord3D(5, -2.5, 10);
+  CHECK( (*vel1).x == 5.0 );
+  CHECK( (*vel1).y == -2.5 );
+  CHECK( (*vel1).z == 10.0 );
+
+  move(pos1, vel1, 4.0);
+  CHECK( (*pos1).x == 30.0 );
+  CHECK( (*pos1).y == 10.0 );
+  CHECK( (*pos1).z == 70.0 );
+
+  deleteCoord3D(pos1);
+  deleteCoord3D(vel1);
+}

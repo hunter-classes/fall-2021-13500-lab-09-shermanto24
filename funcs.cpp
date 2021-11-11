@@ -34,3 +34,21 @@ void move(Coord3D *ppos, Coord3D *pvel, double dt)
   (*ppos).y += (*pvel).y * dt;
   (*ppos).z += (*pvel).z * dt;
 }
+
+//----------------- task E -----------------
+
+// allocate memory and initialize
+Coord3D* createCoord3D(double x, double y, double z)
+{
+  Coord3D *coord = new Coord3D;
+  (*coord).x = x;
+  (*coord).y = y;
+  (*coord).z = z;
+  return coord;
+}
+
+// free memory
+void deleteCoord3D(Coord3D *p)
+{
+  delete p;
+}
