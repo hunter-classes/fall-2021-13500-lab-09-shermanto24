@@ -45,7 +45,7 @@ int main()
   std::cout << "*pvel = {5.5, -1.4, 7.77}" << '\n';
 
   move(ppos, pvel, 10.0);
-  std::cout << "\*ppos after 10 seconds = {"
+  std::cout << "*ppos after 10 seconds = {"
             << (*ppos).x << ", " << (*ppos).y << ", " << (*ppos).z << "}" << '\n';
 
   deleteCoord3D(ppos);
